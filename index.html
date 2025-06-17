@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>JO1體驗入口</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 1rem;
+    }
+    h1 {
+      color: #333;
+    }
+    .member-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .member-card {
+      width: 150px;
+      cursor: pointer;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: white;
+    }
+    .member-card img {
+      width: 100%;
+      display: block;
+    }
+    .member-card p {
+      margin: 0;
+      padding: 0.5rem;
+      background: #eee;
+      font-weight: bold;
+    }
+    .hint {
+      margin-top: 2rem;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>請選擇你想互動的成員</h1>
+  <div class="member-grid">
+    <div class="member-card" onclick="goTo('junki')"><img src="junki.jpg"><p>純喜</p></div>
+    <div class="member-card" onclick="goTo('kimata')"><img src="kimata.jpg"><p>翔也</p></div>
+    <div class="member-card" onclick="goTo('ruki')"><img src="ruki.jpg"><p>瑠姫</p></div>
+    <div class="member-card" onclick="goTo('shion')"><img src="shion.jpg"><p>汐恩</p></div>
+    <div class="member-card" onclick="goTo('shosei')"><img src="shosei.jpg"><p>祥生</p></div>
+    <div class="member-card" onclick="goTo('sky')"><img src="sky.jpg"><p>碧海</p></div>
+    <div class="member-card" onclick="goTo('ren')"><img src="ren.jpg"><p>蓮</p></div>
+    <div class="member-card" onclick="goTo('takumi')"><img src="takumi.jpg"><p>拓實</p></div>
+    <div class="member-card" onclick="goTo('mame')"><img src="mame.jpg"><p>一成</p></div>
+    <div class="member-card" onclick="goTo('keigo')"><img src="keigo.jpg"><p>景瑚</p></div>
+    <div class="member-card" onclick="goTo('sho')"><img src="sho.jpg"><p>與那城</p></div>
+  </div>
+  <p class="hint">⚠️ 若無法載入圖像，請確認網路連線或瀏覽器允許圖片讀取。</p>
+  <script>
+    function goTo(member) {
+      localStorage.setItem("selectedMember", member);
+      localStorage.removeItem("taskCompleted");
+      window.location.href = `${member}_scene1.html`;
+    }
+  </script>
+</body>
+</html>
